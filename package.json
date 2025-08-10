@@ -1,0 +1,129 @@
+{
+    "name": "cfml-smart-tools",
+    "displayName": "CFML Smart Tools",
+    "description": "Comprehensive CFML development tools with syntax highlighting, IntelliSense, auto tag closing, and formatting",
+    "version": "1.2.0",
+    "icon": "images/logo.jpg",
+
+    "publisher": "AkhilTeotia",
+    "author": {
+    "name": "Akhil Teotia",
+    "email": "AkhilTeotia19@gmail.com"
+  },
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets",
+        "Formatters",
+        "Other"
+    ],
+    "keywords": [
+        "cfml",
+        "coldfusion",
+        "cfc",
+        "cfm",
+        "html",
+        "web development"
+    ],
+    "activationEvents": [
+        "onLanguage:cfml",
+        "onLanguage:html"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "cfml",
+                "aliases": [
+                    "CFML",
+                    "ColdFusion",
+                    "cfml"
+                ],
+                "extensions": [
+                    ".cfm",
+                    ".cfc",
+                    ".cfml"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "cfml",
+                "scopeName": "text.html.cfml",
+                "path": "./syntaxes/cfml.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "cfml",
+                "path": "./snippets/cfml.json"
+            },
+            {
+                "language": "cfml",
+                "path": "./snippets/html.json"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "CFML Smart Tools",
+            "properties": {
+                "cfml.format.indentSize": {
+                    "type": "number",
+                    "default": 2,
+                    "description": "Number of spaces for indentation"
+                },
+                "cfml.format.closeTags": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Automatically close CFML and HTML tags"
+                },
+                "cfml.format.insertSpaces": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Use spaces instead of tabs for indentation"
+                },
+                "cfml.intellisense.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable IntelliSense for CFML tags and attributes"
+                },
+                "cfml.autoTagClosing.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable automatic tag closing"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "cfml.formatDocument",
+                "title": "Format CFML Document"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "echo Skipping compile step",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/node": "^24.2.1",
+        "@types/vscode": "^1.74.0",
+        "@vscode/test-electron": "^2.5.2",
+        "@vscode/vsce": "^3.6.0",
+        "typescript": "^4.9.5",
+        "vscode": "^1.1.37"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/akhil4826/cfml-smart-tools.git"
+    },
+    "bugs": {
+        "url": "https://github.com/akhil4826/cfml-smart-tools/issues"
+    },
+    "license": "MIT"
+}

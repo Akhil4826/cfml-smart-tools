@@ -1,0 +1,168 @@
+{
+    "CF If Statement": {
+      "prefix": "cfif",
+      "body": [
+        "<cfif ${1:condition}>",
+        "\t${2:<!-- content -->}",
+        "</cfif>"
+      ],
+      "description": "CFML if statement"
+  },
+    "CF If-Else Statement": {
+      "prefix": "cfifelse",
+      "body": [
+        "<cfif ${1:condition}>",
+        "\t${2:<!-- if content -->}",
+        "<cfelse>",
+        "\t${3:<!-- else content -->}",
+        "</cfif>"
+      ],
+      "description": "CFML if-else statement"
+    },
+    "CF Loop": {
+      "prefix": "cfloop",
+      "body": [
+        "<cfloop ${1:query=\"queryName\"} ${2:index=\"i\"} ${3:from=\"1\"} ${4:to=\"10\"}>",
+        "\t${5:<!-- loop content -->}",
+        "</cfloop>"
+      ],
+      "description": "CFML loop"
+    },
+    "CF Query Loop": {
+      "prefix": "cfloopquery",
+      "body": [
+        "<cfloop query=\"${1:queryName}\">",
+        "\t${2:<!-- loop content -->}",
+        "</cfloop>"
+      ],
+      "description": "CFML query loop"
+    },
+    "CF List Loop": {
+      "prefix": "cflooplist",
+      "body": [
+        "<cfloop list=\"${1:listName}\" index=\"${2:i}\" delimiters=\"${3:,}\">",
+        "\t${4:<!-- loop content -->}",
+        "</cfloop>"
+      ],
+      "description": "CFML list loop"
+    },
+    "CF Output": {
+      "prefix": "cfoutput",
+      "body": [
+        "<cfoutput${1: query=\"queryName\"}>",
+        "\t${2:<!-- output content -->}",
+        "</cfoutput>"
+      ],
+      "description": "CFML output block"
+    },
+    "CF Query": {
+      "prefix": "cfquery",
+      "body": [
+        "<cfquery name=\"${1:queryName}\" datasource=\"${2:datasource}\">",
+        "\t${3:SELECT * FROM tableName}",
+        "</cfquery>"
+      ],
+      "description": "CFML query"
+    },
+    "CF Set": {
+      "prefix": "cfset",
+      "body": [
+        "<cfset ${1:variableName} = ${2:value}>"
+      ],
+      "description": "CFML set variable"
+    },
+    "CF Param": {
+      "prefix": "cfparam",
+      "body": [
+        "<cfparam name=\"${1:paramName}\" type=\"${2:string}\" default=\"${3:defaultValue}\">"
+      ],
+      "description": "CFML parameter"
+    },
+    "CF Function": {
+      "prefix": "cffunction",
+      "body": [
+        "<cffunction name=\"${1:functionName}\" access=\"${2:public}\" returntype=\"${3:any}\" output=\"${4:false}\">",
+        "\t<cfargument name=\"${5:argName}\" type=\"${6:string}\" required=\"${7:true}\">",
+        "\t${8:<!-- function body -->}",
+        "\t<cfreturn ${9:result}>",
+        "</cffunction>"
+      ],
+      "description": "CFML function definition"
+    },
+    "CF Component": {
+      "prefix": "cfcomponent",
+      "body": [
+        "<cfcomponent displayname=\"${1:ComponentName}\" hint=\"${2:Component description}\">",
+        "\t${3:<!-- component content -->}",
+        "</cfcomponent>"
+      ],
+      "description": "CFML component"
+    },
+    "CF Include": {
+      "prefix": "cfinclude",
+      "body": [
+        "<cfinclude template=\"${1:template.cfm}\">"
+      ],
+      "description": "CFML include"
+    },
+    "CF Location": {
+      "prefix": "cflocation",
+      "body": [
+        "<cflocation url=\"${1:url}\" addtoken=\"${2:false}\">"
+      ],
+      "description": "CFML location redirect"
+    },
+    "CF Dump": {
+      "prefix": "cfdump",
+      "body": [
+        "<cfdump var=\"${1:variable}\" label=\"${2:Debug}\">"
+      ],
+      "description": "CFML dump variable"
+    },
+    "CF Mail": {
+      "prefix": "cfmail",
+      "body": [
+        "<cfmail to=\"${1:recipient@email.com}\" from=\"${2:sender@email.com}\" subject=\"${3:Subject}\">",
+        "\t${4:Email content}",
+        "</cfmail>"
+      ],
+      "description": "CFML email"
+    },
+    "CF HTTP": {
+      "prefix": "cfhttp",
+      "body": [
+        "<cfhttp url=\"${1:http://example.com}\" method=\"${2:GET}\" result=\"${3:httpResult}\" timeout=\"${4:30}\">",
+        "\t${5:<!-- HTTP parameters -->}",
+        "</cfhttp>"
+      ],
+      "description": "CFML HTTP request"
+    },
+    "CF Try-Catch": {
+      "prefix": "cftry",
+      "body": [
+        "<cftry>",
+        "\t${1:<!-- try block -->}",
+        "\t<cfcatch type=\"${2:any}\">",
+        "\t\t${3:<!-- catch block -->}",
+        "\t</cfcatch>",
+        "</cftry>"
+      ],
+      "description": "CFML try-catch block"
+    },
+    "CF Script": {
+      "prefix": "cfscript",
+      "body": [
+        "<cfscript>",
+        "\t${1:// CFScript code}",
+        "</cfscript>"
+      ],
+      "description": "CFML script block"
+    },
+    "CF Expression": {
+      "prefix": "cfexp",
+      "body": [
+        "#${1:expression}#"
+      ],
+      "description": "CFML expression"
+    }
+}

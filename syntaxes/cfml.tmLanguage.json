@@ -1,0 +1,163 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "CFML",
+    "scopeName": "text.html.cfml",
+    "patterns": [
+      { "include": "#cfml-tags" },
+      { "include": "#cfml-script" },
+      { "include": "#cfml-comments" },
+      { "include": "#cfml-expressions" },
+      { "include": "text.html.basic" }
+    ],
+    "repository": {
+      "cfml-tags": {
+        "patterns": [
+          {
+            "name": "meta.tag.cfml",
+            "begin": "(</?)(cf\\w+)",
+            "end": "(>)",
+            "beginCaptures": {
+              "1": { "name": "punctuation.definition.tag.begin.cfml" },
+              "2": { "name": "entity.name.tag.cfml" }
+            },
+            "endCaptures": {
+              "1": { "name": "punctuation.definition.tag.end.cfml" }
+            },
+            "patterns": [
+              {
+                "name": "entity.other.attribute-name.cfml",
+                "match": "\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b(?=\\s*=)"
+              },
+              {
+                "name": "string.quoted.double.cfml",
+                "begin": "\"",
+                "end": "\"",
+                "patterns": [
+                  { "include": "#cfml-expressions" },
+                  {
+                    "name": "constant.character.escape.cfml",
+                    "match": "\\\\."
+                  }
+                ]
+              },
+              {
+                "name": "string.quoted.single.cfml",
+                "begin": "'",
+                "end": "'",
+                "patterns": [
+                  { "include": "#cfml-expressions" },
+                  {
+                    "name": "constant.character.escape.cfml",
+                    "match": "\\\\."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "cfml-script": {
+        "patterns": [
+          {
+            "name": "meta.embedded.block.cfml",
+            "begin": "(<cfscript>)",
+            "end": "(</cfscript>)",
+            "beginCaptures": {
+              "1": { "name": "meta.tag.cfml" }
+            },
+            "endCaptures": {
+              "1": { "name": "meta.tag.cfml" }
+            },
+            "contentName": "source.cfscript.embedded.cfml",
+            "patterns": [
+              { "include": "#cfscript-content" }
+            ]
+          }
+        ]
+      },
+      "cfscript-content": {
+        "patterns": [
+          {
+            "name": "keyword.control.cfml",
+            "match": "\\b(if|else|elseif|while|for|do|switch|case|default|break|continue|return|try|catch|finally|throw|function|var|new|component|interface|import|include)\\b"
+          },
+          {
+            "name": "keyword.operator.cfml",
+            "match": "(\\+|\\-|\\*|\\/|%|\\+\\+|\\-\\-|==|!=|<|>|<=|>=|&&|\\|\\||!|&|\\||\\^|~|<<|>>|=|\\+=|\\-=|\\*=|\\/=|%=|&=|\\|=|\\^=|<<=|>>=)"
+          },
+          {
+            "name": "constant.language.cfml",
+            "match": "\\b(true|false|null|undefined|this|super|arguments)\\b"
+          },
+          {
+            "name": "constant.numeric.cfml",
+            "match": "\\b\\d+(\\.\\d+)?\\b"
+          },
+          {
+            "name": "string.quoted.double.cfml",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+              {
+                "name": "constant.character.escape.cfml",
+                "match": "\\\\."
+              }
+            ]
+          },
+          {
+            "name": "string.quoted.single.cfml",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+              {
+                "name": "constant.character.escape.cfml",
+                "match": "\\\\."
+              }
+            ]
+          },
+          {
+            "name": "comment.line.double-slash.cfml",
+            "match": "//.*$"
+          },
+          {
+            "name": "comment.block.cfml",
+            "begin": "/\\*",
+            "end": "\\*/"
+          }
+        ]
+      },
+      "cfml-comments": {
+        "patterns": [
+          {
+            "name": "comment.block.cfml",
+            "begin": "<!---",
+            "end": "--->"
+          },
+          {
+            "name": "comment.block.html",
+            "begin": "<!--",
+            "end": "-->"
+          }
+        ]
+      },
+      "cfml-expressions": {
+        "patterns": [
+          {
+            "name": "meta.embedded.line.cfml",
+            "begin": "#",
+            "end": "#",
+            "beginCaptures": {
+              "0": { "name": "punctuation.definition.expression.begin.cfml" }
+            },
+            "endCaptures": {
+              "0": { "name": "punctuation.definition.expression.end.cfml" }
+            },
+            "contentName": "source.cfscript.embedded.cfml",
+            "patterns": [
+              { "include": "#cfscript-content" }
+            ]
+          }
+        ]
+      }
+    }
+  }

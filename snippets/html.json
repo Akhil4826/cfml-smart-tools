@@ -1,0 +1,210 @@
+{
+    "HTML5 Document": {
+      "prefix": "html5",
+      "body": [
+        "<!DOCTYPE html>",
+        "<html lang=\"${1:en}\">",
+        "<head>",
+        "\t<meta charset=\"UTF-8\">",
+        "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+        "\t<title>${2:Document}</title>",
+        "</head>",
+        "<body>",
+        "\t${3:<!-- content -->}",
+        "</body>",
+        "</html>"
+      ],
+      "description": "HTML5 document template"
+    },
+    "Div Element": {
+      "prefix": "div",
+      "body": [
+        "<div${1: class=\"${2:className}\"}>",
+        "\t${3:<!-- content -->}",
+        "</div>"
+      ],
+      "description": "HTML div element"
+    },
+    "Span Element": {
+      "prefix": "span",
+      "body": [
+        "<span${1: class=\"${2:className}\"}>${3:content}</span>"
+      ],
+      "description": "HTML span element"
+    },
+    "Paragraph": {
+      "prefix": "p",
+      "body": [
+        "<p${1: class=\"${2:className}\"}>${3:content}</p>"
+      ],
+      "description": "HTML paragraph"
+    },
+    "Heading 1": {
+      "prefix": "h1",
+      "body": [
+        "<h1${1: class=\"${2:className}\"}>${3:Heading}</h1>"
+      ],
+      "description": "HTML heading 1"
+    },
+    "Heading 2": {
+      "prefix": "h2",
+      "body": [
+        "<h2${1: class=\"${2:className}\"}>${3:Heading}</h2>"
+      ],
+      "description": "HTML heading 2"
+    },
+    "Heading 3": {
+      "prefix": "h3",
+      "body": [
+        "<h3${1: class=\"${2:className}\"}>${3:Heading}</h3>"
+      ],
+      "description": "HTML heading 3"
+    },
+    "Link": {
+      "prefix": "a",
+      "body": [
+        "<a href=\"${1:#}\"${2: class=\"${3:className}\"}>${4:Link Text}</a>"
+      ],
+      "description": "HTML anchor link"
+    },
+    "Image": {
+      "prefix": "img",
+      "body": [
+        "<img src=\"${1:path/to/image}\" alt=\"${2:description}\"${3: class=\"${4:className}\"}>"
+      ],
+      "description": "HTML image"
+    },
+    "Form": {
+      "prefix": "form",
+      "body": [
+        "<form action=\"${1:action.cfm}\" method=\"${2:post}\"${3: class=\"${4:className}\"}>",
+        "\t${5:<!-- form content -->}",
+        "</form>"
+      ],
+      "description": "HTML form"
+    },
+    "Input Text": {
+      "prefix": "input",
+      "body": [
+        "<input type=\"${1:text}\" name=\"${2:name}\" value=\"${3:value}\"${4: placeholder=\"${5:placeholder}\"}${6: class=\"${7:className}\"}>"
+      ],
+      "description": "HTML input field"
+    },
+    "Button": {
+      "prefix": "btn",
+      "body": [
+        "<button type=\"${1:button}\"${2: class=\"${3:className}\"}>${4:Button Text}</button>"
+      ],
+      "description": "HTML button"
+    },
+    "Table": {
+      "prefix": "table",
+      "body": [
+        "<table${1: class=\"${2:className}\"}>",
+        "\t<thead>",
+        "\t\t<tr>",
+        "\t\t\t<th>${3:Header 1}</th>",
+        "\t\t\t<th>${4:Header 2}</th>",
+        "\t\t</tr>",
+        "\t</thead>",
+        "\t<tbody>",
+        "\t\t<tr>",
+        "\t\t\t<td>${5:Data 1}</td>",
+        "\t\t\t<td>${6:Data 2}</td>",
+        "\t\t</tr>",
+        "\t</tbody>",
+        "</table>"
+      ],
+      "description": "HTML table"
+    },
+    "Unordered List": {
+      "prefix": "ul",
+      "body": [
+        "<ul${1: class=\"${2:className}\"}>",
+        "\t<li>${3:Item 1}</li>",
+        "\t<li>${4:Item 2}</li>",
+        "\t<li>${5:Item 3}</li>",
+        "</ul>"
+      ],
+      "description": "HTML unordered list"
+    },
+    "Ordered List": {
+      "prefix": "ol",
+      "body": [
+        "<ol${1: class=\"${2:className}\"}>",
+        "\t<li>${3:Item 1}</li>",
+        "\t<li>${4:Item 2}</li>",
+        "\t<li>${5:Item 3}</li>",
+        "</ol>"
+      ],
+      "description": "HTML ordered list"
+    },
+    "Section": {
+      "prefix": "section",
+      "body": [
+        "<section${1: class=\"${2:className}\"}>",
+        "\t${3:<!-- content -->}",
+        "</section>"
+      ],
+      "description": "HTML section element"
+    },
+    "Header": {
+      "prefix": "header",
+      "body": [
+        "<header${1: class=\"${2:className}\"}>",
+        "\t${3:<!-- header content -->}",
+        "</header>"
+      ],
+      "description": "HTML header element"
+    },
+    "Footer": {
+      "prefix": "footer",
+      "body": [
+        "<footer${1: class=\"${2:className}\"}>",
+        "\t${3:<!-- footer content -->}",
+        "</footer>"
+      ],
+      "description": "HTML footer element"
+    },
+    "Navigation": {
+      "prefix": "nav",
+      "body": [
+        "<nav${1: class=\"${2:className}\"}>",
+        "\t<ul>",
+        "\t\t<li><a href=\"${3:#}\">${4:Home}</a></li>",
+        "\t\t<li><a href=\"${5:#}\">${6:About}</a></li>",
+        "\t\t<li><a href=\"${7:#}\">${8:Contact}</a></li>",
+        "\t</ul>",
+        "</nav>"
+      ],
+      "description": "HTML navigation element"
+    },
+    "Main": {
+      "prefix": "main",
+      "body": [
+        "<main${1: class=\"${2:className}\"}>",
+        "\t${3:<!-- main content -->}",
+        "</main>"
+      ],
+      "description": "HTML main element"
+    },
+    "Article": {
+      "prefix": "article",
+      "body": [
+        "<article${1: class=\"${2:className}\"}>",
+        "\t<h2>${3:Article Title}</h2>",
+        "\t<p>${4:Article content...}</p>",
+        "</article>"
+      ],
+      "description": "HTML article element"
+    },
+    "Aside": {
+      "prefix": "aside",
+      "body": [
+        "<aside${1: class=\"${2:className}\"}>",
+        "\t${3:<!-- sidebar content -->}",
+        "</aside>"
+      ],
+      "description": "HTML aside element"
+    }
+  }
